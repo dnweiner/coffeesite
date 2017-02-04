@@ -1,0 +1,34 @@
+<!--coffees.html-->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+		<!--Sidebar content-->
+		<input ng-model="query" placeholder="Search">
+		<br>
+		Sort by:
+		<select ng-model="orderProp">
+		  <option value="name">Title</option>
+		  <option value="brand">Brand</option>
+		  <option value="country">Country</option>
+		</select>
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+	<table class="table table-striped">
+		<tr class="info">
+			<th>Reviews:</th>
+			<th>Brand:</th>
+			<th>Coffee Title:</th>
+			<th>Country:</th>
+		</tr>
+		<tr ng-repeat="coffee in coffees | filter:query | orderBy:orderProp">
+			<td><a href="#/reviews/{{coffee.id}}">Reviews</a></td>
+			<td>{{coffee.brand}}</td>
+			<td>{{coffee.name}}</td>
+			<td>{{coffee.country}}</td>
+		</tr>		
+	</table>
+    </div>
+  </div>
+</div>

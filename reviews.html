@@ -1,0 +1,15 @@
+<!--reviews.html-->
+
+<h1>Reviews for {{coffeeReviews.brand}}:</h1>
+<table class="table table-striped">
+		<tr class="info">
+			<th>Reviewer:</th>
+			<th>Comment:</th>
+			<th>Rating:</th>
+		</tr>
+		<tr ng-repeat="review in coffeeReviews.reviews">
+			<td>{{review.reviewer}}</td>
+			<td>{{review.comment}}</td>
+			<td>{{review.rating}}</td>
+		</tr>		
+</table>
